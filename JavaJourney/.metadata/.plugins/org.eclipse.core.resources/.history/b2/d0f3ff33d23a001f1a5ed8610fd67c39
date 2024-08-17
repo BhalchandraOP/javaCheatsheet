@@ -1,0 +1,19 @@
+import java.math.BigDecimal;
+
+public class SimpleInterstCalculatorRunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		SimpleInterstCalculator calculator =    // Ise dekh kar pata chala ki iska class banega !!
+				new SimpleInterstCalculator("4500.00", "7.5"); // constructor 
+
+		BigDecimal totalValue = calculator.calculateTotalValue(5); // method in the main class 
+		System.out.println(totalValue);
+	}
+
+}
+//SimpleInterestCalculator calculator =           //
+//		new SimpleInterstCalculator("4500.00","7.5");
+//BigDecimal totalValue = calculator.calculateTotalValue(5);
+//System.out.println(totalValue);

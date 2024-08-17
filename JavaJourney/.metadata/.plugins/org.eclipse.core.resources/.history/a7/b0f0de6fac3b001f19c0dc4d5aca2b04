@@ -1,0 +1,45 @@
+
+public class MyChar {
+
+	private char ch;
+
+	public MyChar(char ch) {
+		// TODO Auto-generated constructor stub
+		this.ch = ch;
+	}
+
+	public boolean isVowel() {
+		// TODO Auto-generated method stub
+		if (ch == 'a' || ch == 'A') {
+			return true;
+		}
+		if (ch == 'e' || ch == 'E') {
+			return true;
+		}
+		if (ch == 'i' || ch == 'I') {
+			return true;
+		}
+		if (ch == 'o' || ch == 'O') {
+			return true;
+		}
+		if (ch == 'u' || ch == 'U') {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean isDigit() {
+		// TODO Auto-generated method stub
+		if (ch >= 48 || ch <= 57) {
+			return true;
+		}
+
+		return false;
+	}
+
+//	public boolean isAlphabet() {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
+
+}

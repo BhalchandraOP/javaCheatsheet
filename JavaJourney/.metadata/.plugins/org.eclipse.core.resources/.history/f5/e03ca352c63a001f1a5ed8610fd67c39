@@ -1,0 +1,8 @@
+
+public class SimpleInterstCalculator {
+
+	public SimpleInterstCalculator(String principal, String interest) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

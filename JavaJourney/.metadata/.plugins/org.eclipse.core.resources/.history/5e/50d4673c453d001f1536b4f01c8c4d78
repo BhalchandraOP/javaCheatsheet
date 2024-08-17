@@ -1,0 +1,17 @@
+package javajourney.conditionals;
+
+import java.util.Scanner; // kyuki ye in built functionality hai toh 
+							// ise use karne ke liye import kiya
+
+public class MenuRunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter Number!: ");
+		int number1 = scanner.nextInt();
+		System.out.println("the number you entered is - " + number1);
+
+	}
+
+}

@@ -1,0 +1,24 @@
+import java.math.BigDecimal;
+
+public class SimpleInterstCalculator {
+
+	BigDecimal principal; // Define Principal as BigDecimal
+	BigDecimal interest; // Define Interest as BigDecimal
+
+	public SimpleInterstCalculator(String principal, String interest) {
+		// TODO Auto-generated constructor stub
+		this.principal = new BigDecimal(principal); // then Used here!!
+		this.interest = new BigDecimal(interest).divide(new BigDecimal(100));
+//	BigDecimal totalValue = principal.add(principal.multiply(interest))
+	}
+
+	public BigDecimal calculateTotalValue(int noOfYears) {
+		// TODO Auto-generated method stub
+		// TotalValue = principal + principal*interest*noOfYears;
+		BigDecimal noOfyearsBigDecimal = new BigDecimal(noOfYears);
+
+		BigDecimal totalValue = principal.add(principal.multiply(interest).multiply(noOfyearsBigDecimal));
+		return totalValue;
+	}
+
+}
