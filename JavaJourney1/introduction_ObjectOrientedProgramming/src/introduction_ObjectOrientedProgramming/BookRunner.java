@@ -1,0 +1,20 @@
+package introduction_ObjectOrientedProgramming;
+
+public class BookRunner {
+	public static void main(String[] args) {
+		// Create a new class called Book
+		// Create three instances
+		Book artOfComputerProgramming = new Book();
+		Book effectiveJava = new Book();
+		Book cleanCode = new Book();
+
+		artOfComputerProgramming.method();
+		effectiveJava.method();
+		cleanCode.method();
+
+//		cleanCode.noOfCopies = 40;
+		cleanCode.setNoOfCopies(49);
+		System.out.println(cleanCode.getNoOfCopies());
+
+	}
+}

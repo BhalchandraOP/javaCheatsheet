@@ -31,3 +31,12 @@ public class MotorBike {
 		System.out.println("Bike Started !!");
 	}
 }
+
+//public class MotorBike {
+//	int speed; // member variable
+//
+//	void start() {
+//		System.out.println("Bike Started!");
+//	}
+//
+//}

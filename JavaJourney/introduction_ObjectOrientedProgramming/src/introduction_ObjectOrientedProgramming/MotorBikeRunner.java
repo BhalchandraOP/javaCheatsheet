@@ -19,5 +19,12 @@ public class MotorBikeRunner {
 		Honda.setSpeed(80);
 		System.out.println(Honda.getSpeed());
 	}
+//	public static void main(String[] args) {
+//		MotorBike ducati = new MotorBike();
+//		MotorBike honda = new MotorBike();
+//		ducati.start();
+//		honda.start();
+//
+//	}
 
 }
