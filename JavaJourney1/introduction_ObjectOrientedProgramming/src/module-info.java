@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module introduction_ObjectOrientedProgramming {
-}
