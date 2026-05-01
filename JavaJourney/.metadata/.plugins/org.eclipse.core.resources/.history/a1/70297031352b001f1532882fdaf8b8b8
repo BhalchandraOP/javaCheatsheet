@@ -1,8 +1,0 @@
-package introduction_ObjectOrientedProgramming;
-
-public class MotorBike {
-	int speed;
-	void start() {
-		System.out.println("Bike Started !!");
-	}
-}

@@ -9,7 +9,7 @@ public class secondLargerst {
 			if (num > largest) {
 				second = largest;
 				largest = num;
-			} else if (num > second && num != second) {
+			} else if (num > second && num != largest) {
 				second = num;
 			}
 		}
@@ -19,7 +19,7 @@ public class secondLargerst {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arr = { 1, 2, 3, 4, 5 };
+		int[] arr = { 1, 1, 0 };
 		seclarg(arr);
 		System.out.print("second largest element- " + seclarg(arr));
 	}
