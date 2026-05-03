@@ -2,15 +2,19 @@ package onlyCoding;
 
 /*
  *      * 
- * 	  * * *	
+ *     * *
+ * 	  * * *
+ * 	   * * 	
  * 		*
  * */
 public class DiamondPattern {
 	public static void Diamond(int n) {
 		for (int i = 1; i <= n; i++) {
+			// Spacing
 			for (int j = n - 1; j >= i; j--) {
 				System.out.print(" ");
 			}
+			// Printing
 			for (int k = 1; k <= i; k++) {
 				System.out.print(" *");
 			}
