@@ -3,6 +3,10 @@ package HashSet;
 import java.util.HashSet;
 
 //Find missing number in array (1 to n)
+
+// first n nums , got the maxm ele from array 
+// loaded array into hashset
+// init for loop till Max , used contains for each i and got the missing ele
 public class findMissingElement {
 
 	public static void main(String[] args) {

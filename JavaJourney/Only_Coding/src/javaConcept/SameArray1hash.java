@@ -7,8 +7,8 @@ public class SameArray1hash {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		HashMap<Integer, Integer> match = new HashMap<>();
-		int ar1[] = { 1, 2, 3, 4 };
-		int ar2[] = { 1, 3, 2, 4 };
+		int ar1[] = { 1, 2, 2, 4 };
+		int ar2[] = { 1, 4, 2, 2 };
 		if (ar1.length != ar2.length) {
 			System.out.print("They are different!");
 			return;
@@ -23,7 +23,8 @@ public class SameArray1hash {
 				System.out.print("They are different!!");
 				return;
 			}
-			match.put(dup, match.get(dup) - 1); // already checked for new key so abhi ddefault value ki jarurat nhi
+			match.put(dup, match.get(dup) - 1);
+			// already checked for new key so abhi ddefault value ki jarurat nhi
 			// clean comedy
 			if (match.get(dup) == 0) {
 				match.remove(dup);

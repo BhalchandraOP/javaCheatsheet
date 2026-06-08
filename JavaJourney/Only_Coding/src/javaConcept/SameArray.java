@@ -23,7 +23,7 @@ public class SameArray {
 			System.out.print(match);
 			System.out.println(match2);
 
-			if (match == match2) {
+			if (match.equals(match2)) {
 				System.out.println("They are same !");
 			} else {
 				System.out.println("They are different! ");
