@@ -20,8 +20,25 @@ public class secondLargerst {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] arr = { 1, 1, 0 };
-		seclarg(arr);
-		System.out.print("second largest element- " + seclarg(arr));
+//		seclarg(arr);
+//		System.out.print("second largest element- " + seclarg(arr));
+		secl(arr);
+	}
+
+	public static void secl(int[] arr) {
+		int lar = Integer.MIN_VALUE;
+		int sec = Integer.MIN_VALUE;
+		for (int num : arr) {
+			if (num > lar) {
+				sec = lar;
+				lar = num;
+			} else if (sec < num && num != lar) {
+				sec = num;
+			}
+		}
+		System.out.println(lar);
+		System.out.println(sec);
+
 	}
 
 }
