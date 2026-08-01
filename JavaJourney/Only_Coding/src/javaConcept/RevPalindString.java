@@ -54,13 +54,31 @@ public class RevPalindString {
 		System.out.println("Reveresed String -> " + rev);
 	}
 
+	public static boolean isPalin(int num) {
+		if (num <= 0) {
+			return false;
+		}
+		int reverse = 0;
+		int x = num;
+		while (x != 0) {
+			reverse = reverse * 10 + x % 10;
+			x = x / 10;
+		}
+		if (num == reverse) {
+			return true;
+		}
+
+		return false;
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String str = "level";
-		rev(str);
-		revUsingChArray(str);
-		REV2POINTER(str);
-		palindrome(str);
+//		String str = "level";
+//		rev(str);
+//		revUsingChArray(str);
+//		REV2POINTER(str);
+//		palindrome(str);
+		isPalin(101);
 	}
 
 }

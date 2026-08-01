@@ -1,16 +1,38 @@
 package com.bhalchandra.execptions;
 
-class Library {
-	int bookavailable = 3;
+class MemberUnavailable extends Exception {
 
-	public void Borrowbook(int bookRequestedCount) throws Exception {
+	public MemberUnavailable(String message) {
+		super(message);
+		// TODO Auto-generated constructor stub
+	}
+
+}
+
+class BookUnavailable extends Exception {
+
+	public BookUnavailable(String message) {
+		super(message);
+		// TODO Auto-generated constructor stub
+	}
+
+}
+
+class Library {
+	int bookavailable = 5;
+
+	public void Borrowbook(int bookRequestedCount, String member) throws Exception {
 
 		if (bookRequestedCount > bookavailable) {
-			throw new Exception("Not enough book present here!"); // This is an Exception object
+			throw new BookUnavailable("Not enough book present here!"); // This is an Exception object
 		}
 		if (bookRequestedCount < 0) {
 			throw new Exception("Request  at least 1 Book");
 		}
+		if (member == null || member.isEmpty()) {
+			throw new MemberUnavailable("Unvalid Member entry! ");
+		}
+		System.out.println("THANK YOU!");
 
 	}
 }
@@ -19,11 +41,18 @@ public class LibraryDemo {
 	public static void main(String[] args) {
 		Library library = new Library();
 		try {
-			library.Borrowbook(-1);
+			library.Borrowbook(3, " d");
+
+		} catch (MemberUnavailable e) {
+
+			System.out.println(e.getMessage());
+		} catch (BookUnavailable e) {
+
+			e.printStackTrace();
 		} catch (Exception e) {
 			{
-				e.getStackTrace();
-//				System.out.println(e.getMessage());
+
+				System.out.println(e.getMessage() + " " + e.getStackTrace());
 
 			}
 		}
