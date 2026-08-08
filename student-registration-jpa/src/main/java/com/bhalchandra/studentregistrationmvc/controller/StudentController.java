@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,69 +16,90 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bhalchandra.studentregistrationmvc.model.Student;
 import com.bhalchandra.studentregistrationmvc.repo.StudentRepo;
+import com.bhalchandra.studentregistrationmvc.service.StudentService;
 
 @Controller
 public class StudentController {
-	final StudentRepo repo;
+	private final StudentService service;
 
+    public StudentController(StudentService service) {
+        this.service = service;
+    }
 
-	StudentController(StudentRepo repo) {
-		this.repo = repo;
-	}
-	
-	
+   	
 	@ModelAttribute
 	public void commanData(ModelMap m) {
 		m.addAttribute("college","TSEC");
 	}
+	
+	@GetMapping("/login")
+	public String login() {
+		System.out.println("Login Page");
+		return "login";
+	}
+	
 	@GetMapping("/")
 	public String home() {
+		System.out.println("Home Page");
 		return "index";
 	}
-	@PostMapping("addStudent")
+	
+	@PostMapping("/addStudent")
 	public String addStudent(@ModelAttribute Student s) {	
-		repo.save(s);
+		service.addStudent(s);
 		return "result";
 	}
 	
+	@PreAuthorize("hasAnyRole('ADMIN', 'FACULTY')")
 	@GetMapping("/showStudents")
 	public String showStudents(ModelMap m) {
-		List<Student> list= repo.findAll();
-		m.addAttribute("s",list);
+		
+		List<Student> list= service.getAllStudents();
+		
+//		System.out.println("Inside Student controller!");
+		
+		m.addAttribute("student",list);
+		
 		return "student";
 	}
 	
+	
 	@GetMapping("/getStudent")
 	public String getStudent(@RequestParam("sid")int id,ModelMap m) {
-		Student student = repo.findById(id).orElse(null);
+		
+		Student student = service.getStudent(id);
+		
 		m.addAttribute("student", student);
+		
 		return "result";
 	}
+	
 	
 	@PostMapping("/deleteStudent")
 	public String deleteStudent(@RequestParam("sid") int id) {
 
-	    if (repo.existsById(id)) {
-	        repo.deleteById(id);
-	    }
-
+		 service.deleteStudent(id);
+		 
 	    return "redirect:/showStudents";
 	}
+	
+	
+	
 	
 	@PostMapping("/updateStudent")
 	public String updateStudent(@ModelAttribute Student student, ModelMap m) {
 
-	    if (repo.existsById(student.getSid())) {
-	        repo.save(student);
-	        m.addAttribute("msg", "Student updated successfully.");
-	    } else {
+		boolean updated = service.updateStudent(student);
 
-	        m.addAttribute("msg", "Student ID not found.");
-	    }
+		if (updated) {
+		    m.addAttribute("msg", "Student updated successfully.");
+		} else {
+		    m.addAttribute("msg", "Student ID not found.");
+		}
 
-	    m.addAttribute("students", repo.findAll());
+		m.addAttribute("student", service.getAllStudents());
 
-	    return "student";
+		return "student";
 	}
 
 }

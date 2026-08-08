@@ -110,7 +110,7 @@ background:#1f8a4d;
 <th>Semester</th>
 </tr>
 
-<c:forEach items="${s}" var="student">
+<c:forEach items="${student}" var="student">
 
 <tr>
 <td>${student.sid}</td>
@@ -132,6 +132,15 @@ background:#1f8a4d;
 </div>
 
 </div>
+<form action="${pageContext.request.contextPath}/logout"
+      method="post">
 
+    <button type="submit">
+
+        Logout
+
+    </button>
+
+</form>
 </body>
 </html>
