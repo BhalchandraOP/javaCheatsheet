@@ -2,3 +2,4 @@
 *.log
 *.class
 bin/
+/student-registration-jpa/
