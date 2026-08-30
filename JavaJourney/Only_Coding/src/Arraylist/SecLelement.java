@@ -10,12 +10,12 @@ public class SecLelement {
 		List<Integer> listal = new ArrayList<>(list);
 		int L = Integer.MIN_VALUE;
 		int SL = Integer.MIN_VALUE;
-		for (int i : listal) {
-			if (i > L) {
+		for (int num : listal) {
+			if (num > L) {
 				SL = L;
-				L = i;
-			} else if (i > SL && i != L) { // Important Case
-				SL = i;
+				L = num;
+			} else if (num > SL && num != L) { // Important Case
+				SL = num;
 			}
 		}
 		if (SL == Integer.MIN_VALUE) {

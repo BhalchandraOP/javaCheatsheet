@@ -6,7 +6,7 @@ public class secondLargerst {
 		int largest = Integer.MIN_VALUE;
 		int second = Integer.MIN_VALUE;
 		for (int num : arr) {
-			if (num > largest) {
+			if (largest < num) {
 				second = largest;
 				largest = num;
 			} else if (num > second && num != largest) {
@@ -36,8 +36,8 @@ public class secondLargerst {
 				sec = num;
 			}
 		}
-		System.out.println(lar);
-		System.out.println(sec);
+		System.out.println("largest: " + lar);
+		System.out.println("second: " + sec);
 
 	}
 

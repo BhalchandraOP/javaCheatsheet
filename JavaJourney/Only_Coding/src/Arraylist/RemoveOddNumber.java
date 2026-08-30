@@ -10,14 +10,14 @@ public class RemoveOddNumber {
 		List<Integer> list = List.of(1, 4, 5, 2, 9);
 		List<Integer> listal = new ArrayList<>(list);
 //Reverse transveral
-		for (int i = listal.size() - 1; i >= 0; i--) {
+		for (int i = listal.size() - 1; i >= 0; i--) { // W step
 			if (listal.get(i) % 2 == 1) {
 				listal.remove(i);
 			}
 		}
 		System.out.print(listal);
-//		Iterator BEST WAY
 
+//		Iterator BEST WAY
 //		Iterator<Integer> it = listal.iterator();
 //		while(it.hasNext()) {
 //			int num=it.next();

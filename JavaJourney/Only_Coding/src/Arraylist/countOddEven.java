@@ -1,6 +1,7 @@
 package Arraylist;
 
 import java.util.ArrayList;
+import java.util.List;
 
 //Count even numbers in ArrayList
 //Example:
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 public class countOddEven {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ArrayList<Integer> list = new ArrayList<>();
+		List<Integer> list = new ArrayList<>();
 		list.add(10);
 		list.add(15);
 		list.add(20);

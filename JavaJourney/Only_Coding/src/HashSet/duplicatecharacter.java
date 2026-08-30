@@ -14,7 +14,7 @@ public class duplicatecharacter {
 			Dup.put(ch, Dup.getOrDefault(ch, 0) + 1);
 		}
 		for (char k : Dup.keySet()) {
-			if (Dup.get(k) > 2) {
+			if (Dup.get(k) >= 2) {
 				System.out.println(k + " -> " + Dup.get(k));
 			}
 		}

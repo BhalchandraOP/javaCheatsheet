@@ -10,6 +10,7 @@ package practice.codes;
 public class prac2 {
 
 	public static void Diamond(int n) {
+
 		for (int i = 1; i <= n; i++) {
 			for (int k = n - 1; k >= i; k--) {
 				System.out.print(" ");
@@ -20,13 +21,13 @@ public class prac2 {
 			System.out.println();
 		}
 		for (int i = 1; i <= n; i++) {
-			for (int j = 1; j <= i; j++) {
-				System.out.print(" ");
-			}
 			for (int k = n - 1; k >= i; k--) {
 				System.out.print(" *");
 			}
 
+			for (int j = 1; j <= i; j++) {
+				System.out.print(" ");
+			}
 			System.out.println();
 		}
 	}
@@ -59,11 +60,15 @@ public class prac2 {
 
 	public static void main(String[] args) {
 		// Reverse String
-//		String str = "Hello";
-//		revStr(str);
-//		prac2 Rev = new prac2();
-//		Rev.rev(str);
-		int i = 3;
+		String str = "Hello";
+//		revStr(str);               
+
+		prac2 Rev = new prac2();
+		Rev.rev(str);
+		// rev is a non static method , so its belong to the Obj
+		// We have created in abve line
+
+		int i = 5;
 		Diamond(i);
 	}
 

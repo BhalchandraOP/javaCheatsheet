@@ -8,6 +8,8 @@ import java.util.HashSet;
 //Since hset takes only unique ,add first arr , and just check elem with that hset 
 public class CommanElemArr {
 
+// Add karenge first element jset me with enhance for loop 
+
 	public static void main(String[] args) {
 		int[] arr1 = { 1, 2, 3, 4 };
 		int[] arr2 = { 3, 3, 4, 4 };

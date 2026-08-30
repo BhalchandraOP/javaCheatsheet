@@ -1,6 +1,7 @@
 package HashSet;
 
 import java.util.HashSet;
+import java.util.Set;
 
 //Find missing number in array (1 to n)
 
@@ -19,7 +20,7 @@ public class findMissingElement {
 			}
 		}
 		// added given array to hash
-		HashSet<Integer> uni = new HashSet<>();
+		Set<Integer> uni = new HashSet<>();
 		for (int n : arr) {
 			uni.add(n);
 		}

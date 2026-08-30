@@ -17,7 +17,7 @@ public class GenricsRunner {
 
 		Integer number = list2.get(0);
 
-		System.out.println(number);
+		System.out.println(list2.get(0));
 
 	}
 

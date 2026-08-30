@@ -4,7 +4,7 @@ public class practicingCodes {
 
 //	######################
 //	Write programs for:
-//
+// print all 
 	public static void all(int[] arr) {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
